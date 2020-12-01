@@ -24,26 +24,28 @@ Y = Y - 1
 n_test = int(len(df)/10)
 Y_train = Y[n_test:]
 Y_test = Y[:n_test]
-X = df[['SPEFit2GeoSplit2BayesianFitParams.logl',
-        'SplineMPEDirectHitsICC.dir_track_hit_distribution_smoothness',
-        'HitStatisticsValuesIC.q_max_doms',
-        'HitStatisticsValuesIC.q_tot_pulses',
-        'SPEFit2GeoSplit2FitParams.nmini',
-        'HitMultiplicityValuesIC.n_hit_doms_one_pulse',
-        'BestTrackDirectHitsICA.dir_track_hit_distribution_smoothness',
-        'SplineMPETruncatedEnergy_SPICEMie_BINS_MuEres.value',
-        'MPEFitParaboloidFitParams.err1',
-        'MPEFitParaboloidFitParams.err2',
-        'MPEFitParaboloidFitParams.rotang',
-        'SplineMPEDirectHitsICA.dir_track_hit_distribution_smoothness',
-        'SplineMPEDirectHitsICA.n_dir_pulses',
-        'SPEFit2TimeSplit2BayesianFitParams.nmini',
-        'SPEFit2GeoSplit1FitParams.nmini',
-        'SplineMPEDirectHitsICD.n_dir_strings',
-        'SplineMPE_SegementFitParams.rlogl',
-        'SplineMPETruncatedEnergy_SPICEMie_BINS_Neutrino.energy',
-        'SplineMPECharacteristicsIC.avg_dom_dist_q_tot_dom',
-        'MPEFitHighNoiseFitParams.nmini']]
+X = df[['LineFitGeoSplit1Params.n_hits',
+        'SplineMPEDirectHitsICB.n_early_strings',
+        'SplineMPEDirectHitsICB.n_late_doms',
+        'SPEFitSingleTimeSplit1.azimuth',
+        'ProjectedQ.max_grad_radius_circ_F',
+        'ProjectedQ.ratio',
+        'BestTrackCramerRaoParams.cramer_rao_theta',
+        'BestTrackCramerRaoParams.variance_theta',
+        'BestTrackCramerRaoParams.variance_x',
+        'BestTrackCramerRaoParams.variance_y',
+        'BestTrackCramerRaoParams.covariance_theta_y',
+        'SplineMPETruncatedEnergy_SPICEMie_DOMS_Muon.energy',
+        'SplineMPETruncatedEnergy_SPICEMie_BINS_Muon.energy',
+        'SPEFit2TimeSplit1BayesianFitParams.nmini',
+        'LineFitTimeSplit2Params.n_hits',
+        'BestTrackDirectHitsICB.n_dir_pulses',
+        'HitStatisticsValues.min_pulse_time',
+        'SplineMPEDirectHitsICE.n_dir_doms',
+        'SplineMPEDirectHitsICE.n_late_strings',
+        'MPEFit_HVFitParams.nmini']]
+        #'SplineMPECharacteristicsIC.avg_dom_dist_q_tot_dom',
+        #'MPEFitHighNoiseFitParams.nmini']]
 X_box= power_transform(X, method='yeo-johnson')    
 X_btrain = X_box[n_test:]#splitting the dataframe
 X_btest = X_box[:n_test]
